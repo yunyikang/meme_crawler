@@ -1,0 +1,3 @@
+cron/*.txt eol=lf
+db_scripts/* eol=lf
+scripts/* eol=lf
