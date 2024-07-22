@@ -1,0 +1,56 @@
+
+services:
+  crawler:
+    build:
+      context: .
+    container_name: my_crawler
+    # ports:
+    #   - 8000:8000
+    environment:
+      DB_USER: root
+      DB_PASSWORD_FILE: /run/secrets/db_password
+      API_KEY_FILE: /run/secrets/api_key
+      API_SECRET_FILE: /run/secrets/api_secret
+      BOT_TOKEN_FILE: /run/secrets/bot_token
+    secrets:
+      - db_password
+      - api_key
+      - api_secret
+      - bot_token
+
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    container_name: my_db
+    image: mysql
+    # restart: always
+    volumes:
+      # - db-data:/var/lib/postgresql/data
+      - ./db_scripts:/docker-entrypoint-initdb.d
+      - my-vol:/var/lib/mysql      
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_password
+      MYSQL_DATABASE : db
+    secrets:
+      - db_password
+    # expose:
+    #   - 5432
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 0s
+volumes:
+  my-vol:
+
+secrets:
+  db_password:
+    file: secrets/db_password.txt
+  bot_token:
+    file: secrets/bot_token.txt
+  api_key:
+    file: secrets/api_key.txt
+  api_secret:
+    file: secrets/api_secret.txt

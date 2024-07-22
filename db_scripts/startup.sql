@@ -1,0 +1,17 @@
+-- CREATE DATABASE IF NOT EXISTS db;
+
+-- USE db;
+
+DROP TABLE IF EXISTS memes;
+CREATE TABLE memes (
+  id INT NOT NULL AUTO_INCREMENT,
+  post_id VARCHAR(256) NOT NULL,
+  title VARCHAR(256) NOT NULL,
+  score INT NOT NULL,
+  url VARCHAR(256) NOT NULL,
+  created_time DATETIME NOT NULL,
+  num_comments INT NOT NULL,
+  author VARCHAR(256) NOT NULL,
+  PRIMARY KEY (id)
+);
+
