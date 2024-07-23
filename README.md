@@ -50,14 +50,14 @@
 2. Store the unique memes in a set
 3. Query *memes_snapshot* table for top 20 memes 
 5. For each top meme, extract snapshot for past 24 hours
-6. Create a line graph for scores of each top meme
+6. Create a time series for scores of each top meme
 7. Create table for top 20 memes in desending order
 8. Return findings to user
 
 
 ## Visualisations
 
-- Line graph to track performance of each top meme (steep line suggests potential for high performance)
+- Time series graph to track performance of each top meme (steep slope suggests potential for high performance)
 - Top 20 table of memes
 
 
