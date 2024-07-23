@@ -3,6 +3,7 @@
 ## Prerequisites
 
 - Docker
+- Import secrets folder to root folder (api keys/secret and bot token)
 
 ## Build crawler image and run containers 
 
