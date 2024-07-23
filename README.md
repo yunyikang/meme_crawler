@@ -29,7 +29,6 @@
 - url
 - PRIMARY KEY (post_id)
 
-
 *memes_snapshot*
 - post_id 
 - snapshot_time
@@ -54,14 +53,14 @@
 7. Create table for top 20 memes in desending order
 8. Return findings to user
 
+### Telegram bot
+- Add @yymeme_bot
+- type `/memes` to query report
 
 ## Visualisations
-
 - Time series graph to track performance of each top meme (steep slope suggests potential for high performance)
-- Top 20 table of memes
+- Table of top 20 memes
 
-
-##  Improvements
-
+##  Future improvements
 1. Create word cloud of top 20 memes to see if there is a trending themes 
 2. Summarise the comments for each top 20 post 
