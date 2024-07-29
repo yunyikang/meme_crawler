@@ -2,3 +2,6 @@ python-telegram-bot==21.4
 praw==7.7.1
 pandas==2.2.2
 mysql-connector-python==9.0.0
+Spire.Doc==12.7.1
+dataframe_image==0.2.4
+matplotlib==3.9.1

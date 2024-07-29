@@ -11,6 +11,7 @@ ENV PYTHONUNBUFFERED=1
 RUN apt-get update
 RUN apt-get install -y cron
 RUN apt-get install -y procps
+RUN apt-get -y install libicu-dev
 
 
 WORKDIR /app
